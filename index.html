@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jingkai WANG - Personal Website</title>
     <style>
-        body { font-family: sans-serif; margin: 40px; line-height: 1.6; background-color: #f4f4f9; color: #333; }
+        /* 全局样式调整：为左侧侧边栏留出空间 */
+        body { 
+            font-family: sans-serif; 
+            margin: 40px 40px 40px 240px; /* 左边距加大到 240px，给目录留位置 */
+            line-height: 1.6; 
+            background-color: #f4f4f9; 
+            color: #333; 
+        }
         .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
         header { margin-bottom: 30px; }
         h1 { color: #2E5A88; margin-bottom: 5px; }
@@ -18,7 +25,7 @@
         .item-block { margin-bottom: 20px; }
         ul { padding-left: 20px; margin-top: 5px; }
         li { margin-bottom: 6px; }
-        p {text-align: justify;}
+        p { text-align: justify; }
         .publication-item { margin-bottom: 15px; padding-left: 15px; text-indent: -15px; }
         .interest-tags { margin-top: 10px; }
         .tag { display: inline-block; background-color: #e2e8f0; color: #4a5568; padding: 4px 10px; margin: 0 5px 8px 0; border-radius: 4px; font-size: 0.9em; }
@@ -41,11 +48,79 @@
             clear: both;
             display: table;
         }
+
+        /* ========================================================
+           侧边悬浮目录栏样式 (Sidebar Navigation Styles)
+           ======================================================== */
+        .sidebar-nav {
+            position: fixed;
+            top: 60px;
+            left: 30px;
+            width: 170px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 3px solid #2E5A88;
+        }
+        .sidebar-nav ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .sidebar-nav li {
+            margin-bottom: 12px;
+        }
+        .sidebar-nav a {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 0.95em;
+            display: block;
+            transition: color 0.2s ease;
+        }
+        .sidebar-nav a:hover {
+            color: #2E5A88;
+            font-weight: bold;
+        }
+
+        /* 让页面滚动时更平滑，体验更好 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 响应式布局：当屏幕太小时（如手机），将目录变成顶部常规布局，防止遮挡内容 */
+        @media (max-width: 1050px) {
+            body { margin: 20px; }
+            .sidebar-nav { 
+                position: relative; 
+                top: 0; 
+                left: 0; 
+                width: auto; 
+                margin: 0 auto 20px auto; 
+                border-left: none;
+                border-bottom: 3px solid #2E5A88;
+            }
+            .sidebar-nav ul { display: flex; flex-wrap: wrap; gap: 15px; }
+            .sidebar-nav li { margin-bottom: 0; }
+        }
     </style>
 </head>
 <body>
+
+    <nav class="sidebar-nav">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#appointments">Appointments</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <header>
+        <header id="about">
             <img src="image/genimi-mypic.png" class="profile-pic">
             <h1>Jingkai WANG</h1>
             <div class="contact-info">
@@ -64,7 +139,7 @@
             </div>
         </header>
 
-        <section>
+        <section id="education">
             <h2>Education</h2>
             <div class="item-block">
                 <span class="date">Sep 2024 - Aug 2025</span>
@@ -78,7 +153,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="appointments">
             <h2>Employment & Academic Appointments</h2>
             <div class="item-block">
                 <span class="date">Sep 2024 - Present</span>
@@ -98,7 +173,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="publications">
             <h2>Publications</h2>
             <div class="publication-item">
                 <strong>Wang J</strong>, Xu Z, Shek HT, Wong CL, Cheung M*. DLC1 stabilizes <em>FOXD3</em> expression post-transcriptionally to regulate enteric neural crest development in Hirschsprung Disease, <em>Genome Medicine</em>. (Submitted)
@@ -117,23 +192,22 @@
             </div>
         </section>
 
-        <section>
+        <section id="research">
             <h2>Research Experience</h2>
             
             <h3>1. Multi-Omics Integration revealing the DLC1-<em>FOXD3</em> Axis in Neural Crest Development</h3>
-            <p style="text-indent: 2em; text-align: justify;">During my Master’s program and subsequent role as a research assistant, I worked on a project that uncovered a unique post-transcriptional regulatory mechanism between the protein DLC1 and <em>FOXD3</em> mRNA. 
-                An overview of this work is described below.
+            <p style="text-indent: 2em; text-align: justify;">During my Master’s program and subsequent role as a research assistant, I worked on a project that uncovered a unique post-transcriptional regulatory mechanism between the protein DLC1 and <em>FOXD3</em> mRNA. An overview of this work is described below.</p>
+            
             <p style="text-indent: 2em; text-align: justify;">While the RhoGAP protein DLC1 is known to regulate neural crest cell fate and migration by modulating downstream neural crest-determining markers like 
                 <em>SOX9</em>, <em>SNAI2</em>, and <em>FOXD3</em>, the precise mechanism governing <em>FOXD3</em> regulation has remained elusive. Unlike <em>SOX9</em> and <em>SNAI2</em>, 
-                which are regulated 
-                via intronic splicing, <em>FOXD3</em> is an intronless gene, suggesting an alternative regulatory pathway. To elucidate this, we performed mass spectrometry 
+                which are regulated via intronic splicing, <em>FOXD3</em> is an intronless gene, suggesting an alternative regulatory pathway. To elucidate this, we performed mass spectrometry 
                 following DLC1 immunoprecipitation (IP-MS) in iPSC-derived neural crest cells. Functional enrichment of DLC1 cofactors revealed a novel role for DLC1 
                 in mRNA stabilization through direct binding. This interaction was mapped using DLC1 RIP-seq, which demonstrated a distinct enrichment of binding signals 
                 localized around the 3' UTR of <em>FOXD3</em>. Actinomycin D-treated RNA decay assays confirmed that DLC1 knockdown significantly accelerates <em>FOXD3</em> mRNA 
                 degradation, proving its stabilizing role during normal neural crest development. To determine how DLC1 selectively recognizes its targets, we integrated 
                 differential expression data from RNA-seq (DLC1 knockdown vs. control) with our RIP-seq data. Motif analysis of down-regulated transcripts harboring DLC1 3' 
                 UTR peaks uncovered a highly conserved sequence motif, indicating a clear sequence-specific recognition preference for DLC1. Finally, clinical database 
-                mining revealed concurrent downregulation of both DLC1 and <em>FOXD3</em> in iPSC-derived neural crest cells from Hirschsprung disease patients, underscoring 
+                mining revealed concurrent downregulation of both <em>DLC1</em> and <em>FOXD3</em> in iPSC-derived neural crest cells from Hirschsprung disease patients, underscoring 
                 the potential pathogenic risk of disrupting this post-transcriptional regulatory axis during early development.</p>
             <div style="text-align: center; margin: 25px 0;">
                 <img src="image/project1.jpg" alt="Multi-omics integration workflow for DLC1-FOXD3 axis" style="max-width: 90%; height: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -163,14 +237,15 @@
                 <img src="image/project2.jpg" style="max-width: 80%; height: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
             </div>
             <ul><li>Key Findings in Retina-PBMC Data</li></ul>
-                <p>
-                    Applying this model to diabetic retinopathy data revealed that multiple Müller glia-secreted ligands, including <em>VIM</em>, <em>SPP1</em>, and <em>COL9A2</em>, aberrantly converge on the <em>CD44</em> receptor of B cells. This interaction drives a highly active, self-sustaining reciprocal feedback loop with B-cell-derived <em>NPG1</em> targeting Müller glia <em>ERBB2</em> receptors, revealing a novel pathogenic mechanism that sustains chronic inflammation in the diabetic ocular microenvironment.
-                </p>
+            <p>
+                Applying this model to diabetic retinopathy data revealed that multiple Müller glia-secreted ligands, including <em>VIM</em>, <em>SPP1</em>, and <em>COL9A2</em>, aberrantly converge on the <em>CD44</em> receptor of B cells. This interaction drives a highly active, self-sustaining reciprocal feedback loop with B-cell-derived <em>NPG1</em> targeting Müller glia <em>ERBB2</em> receptors, revealing a novel pathogenic mechanism that sustains chronic inflammation in the diabetic ocular microenvironment.
+            </p>
+
             <h3>3. Gene, Methylation, and Alternative Splicing Regulatory Network Modeling via Mendelian Randomization</h3>
             <p style="text-indent: 2em; text-align: justify;">Conducted extensive research training in statistical genetics by integrating GWAS data and multi-omics QTL datasets using Mendelian randomization approaches. Successfully constructed a highly resolved gene-splicing and methylation-gene regulatory network in ADHD patients, uncovering novel genetic and epigenetic pathogenic mechanisms.</p>
         </section>
 
-        <section>
+        <section id="awards">
             <h2>Scholarships & Awards</h2>
             <ul>
                 <li><span class="date">Nov 2023</span>Annual Scholarship of Southern Medical University</li>
@@ -181,7 +256,7 @@
             </ul>
         </section>
 
-        <section>
+        <section id="skills">
             <h2>Technical & Experimental Skills</h2>
             <ul>
                 <li><strong>Computational & Statistical Skills:</strong> Linux; R; Python; MatLab; C++; SAS; Adobe Creative Suite.</li>
