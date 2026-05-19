@@ -3,19 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Jingkai WANG - Personal Website</title>
     <style>
         body { font-family: sans-serif; margin: 40px; line-height: 1.6; background-color: #f4f4f9; color: #333; }
-        container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; }
-        h1 { color: #0066cc; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        h1 { color: #0066cc; margin-bottom: 5px; }
+        h2 { color: #0066cc; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px; margin-top: 30px; }
+        h3 { color: #4a5568; margin-top: 20px; }
+        .date { float: right; color: #718096; font-style: italic; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .publication-item { margin-bottom: 15px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Website!</h1>
-        <p>Hi, I'm a researcher and developer. This is my new personal space on the web.</p>
-        <h2>About Me</h2>
-        <p>Write a brief bio about your background, goals, and expertise here.</p>
+        <!-- Profile Section -->
+        <header>
+            <h1>Jingkai WANG</h1>
+            <p><strong>Researcher & Developer</strong></p>
+            <p>Welcome to my personal space on the web. I am a researcher passionate about solving complex problems at the intersection of science and technology. Feel free to explore my background, research interests, and recent work below.</p>
+        </header>
+
+        <!-- Education Section -->
+        <section>
+            <h2>Education</h2>
+            <div>
+                <span class="date">Expected 20XX / 20XX - 20XX</span>
+                <strong>Degree Name in Field of Study</strong><br>
+                <em>University Name</em>, Location
+                <ul>
+                    <li>Relevant details, honors, or key focus areas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Employment Section -->
+        <section>
+            <h2>Employment</h2>
+            <div>
+                <span class="date">20XX - Present</span>
+                <strong>Job Title / Role</strong><br>
+                <em>Company or Institution Name</em>, Location
+                <ul>
+                    <li>Key responsibility, achievement, or project managed in this role.</li>
+                    <li>Core technical tools or methodologies utilized.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Research Section with Three Subsections -->
+        <section>
+            <h2>Research</h2>
+            
+            <h3>Research Area 1: Focus & Methodology</h3>
+            <p>Provide a detailed overview of your primary research vector. Describe the core biological, computational, or theoretical questions you are tackling and the specific methodologies you deploy to answer them.</p>
+
+            <h3>Research Area 2: Data Integration & Frameworks</h3>
+            <p>Elaborate on how you manage data analytics, system-level modeling, or specialized computational pipelines. Highlight how integrating distinct data streams advances the scope of your discoveries.</p>
+
+            <h3>Research Area 3: Future Directions & Applications</h3>
+            <p>Discuss the long-term vision of your research, its real-world implications, or how emerging tech architectures can be leveraged to translate experimental insights into practical applications.</p>
+        </section>
+
+        <!-- Publication Section -->
+        <section>
+            <h2>Publications</h2>
+            <div class="publication-item">
+                <strong>Wang, J.</strong>, Co-author, A., & Senior-Author, B. (2026). <em>Title of your pathbreaking research paper or manuscript currently under preparation.</em> Journal Name / Preprint Repository.
+            </div>
+            <div class="publication-item">
+                Co-author, X., <strong>Wang, J.</strong>, & Senior-Author, Y. (2025). <em>Title of another impactful research contribution or conference proceeding.</em> Journal Name, Vol(Issue), Pages.
+            </div>
+        </section>
     </div>
 </body>
 </html>
