@@ -123,7 +123,6 @@
             <h3>1. Multi-Omics Integration revealing the DLC1-<em>FOXD3</em> Axis in Neural Crest Development</h3>
             <p style="text-indent: 2em; text-align: justify;">During my Master’s program and subsequent role as a research assistant, I worked on a project that uncovered a unique post-transcriptional regulatory mechanism between the protein DLC1 and <em>FOXD3</em> mRNA. 
                 An overview of this work is described below.
-                
             <p style="text-indent: 2em; text-align: justify;">While the RhoGAP protein DLC1 is known to regulate neural crest cell fate and migration by modulating downstream neural crest-determining markers like 
                 <em>SOX9</em>, <em>SNAI2</em>, and <em>FOXD3</em>, the precise mechanism governing <em>FOXD3</em> regulation has remained elusive. Unlike <em>SOX9</em> and <em>SNAI2</em>, 
                 which are regulated 
@@ -139,10 +138,31 @@
             <div style="text-align: center; margin: 25px 0;">
                 <img src="image/project1.jpg" alt="Multi-omics integration workflow for DLC1-FOXD3 axis" style="max-width: 90%; height: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
             </div>
-
+            
             <h3>2. Spatial Mapping Algorithms for Single-Cell Transcriptomics of the PMBCs</h3>
-            <p style="text-indent: 2em; text-align: justify;">Developed an algorithm leveraging spatial transcriptomics data to restore spatial context to single-cell blood RNA-sequencing data. Applying this workflow led to the discovery of a distinct positive feedback loop between pericytes and B cells that actively promotes diabetic retinopathy progression.</p>
+            <p>
+                Traditional computational methods for inferring cell-cell communication (CCC) are constrained by a critical data modality mismatch[cite: 7]. Current frameworks rely either entirely on single-cell RNA sequencing (scRNA-seq)—which captures detailed ligand-receptor (LR) signaling profiles in fluidic, unstructured samples like blood—or entirely on spatial transcriptomics (ST), which provides highly accurate localized predictions within fixed solid tissues[cite: 7]. However, a major unmet research gap exists in modeling the dynamic endocrine cross-talk occurring at the interface of these two environments: specifically, how to analyze CCC between a solid tissue and the mobile blood cells flowing through its internal vasculature[cite: 6, 11]. This limitation is particularly evident in diseases like diabetic retinopathy, where crucial pathogenic immune signals are exchanged between the fixed retinal tissue and peripheral blood mononuclear cells (PBMCs) circulating through passing vessels[cite: 60, 63]. Prior to this work, no computational framework could effectively leverage both the spatial coordinates of ST tissue data and the fluidic cell profiles of blood scRNA-seq data simultaneously[cite: 7].
+            </p>
+            <ul><li>Methodology & Logic: The Probabilistic "Pseudo Distance" Model</li></ul>
+            <p>
+                To bridge this gap, we developed a novel probabilistic model that introduces a spatial framework to circulating blood cells[cite: 7, 9]. Because flowing PBMCs lack precise coordinate data, the model operates on the logical assumption that a blood cell’s spatial probability distribution matches the density of local blood vessels within the tissue[cite: 10, 11].
+            </p>
 
+            <ol>
+                <li>
+                    <strong>Vascular Mapping:</strong> We first deconvolute the solid tissue's ST data to calculate the local proportion of endothelial cells at every spot, establishing a normalized vascular density function ($f_{endo}$)[cite: 15, 16, 17].
+                </li>
+                <li>
+                    <strong>Pseudo Distance Calculation:</strong> Using this density function as a spatial probability map, we calculate an expected mathematical "pseudo distance" ($\delta$) between each fixed tissue cell and the circulating blood cells, weighting their physical geometric distances by localized vascular probabilities[cite: 18, 20, 22, 23].
+                </li>
+                <li>
+                    <strong>Network & Regulatory Scoring:</strong> By integrating this pseudo distance into a modified <code>stMLnet</code> framework, we score LR signaling activities inversely to their proximity to the blood vessels[cite: 29, 31, 32]. We then employ Random Forest Regression to quantify how strongly these spatial signaling activities regulate downstream target gene expression, filtering out low-importance pairs to isolate true endocrine interactions[cite: 36, 37, 38].
+                </li>
+            </ol>
+            <ul><li>Key Findings in Retina-PBMC Data</li></ul>
+                <p>
+                    Applying this model to diabetic retinopathy data revealed that multiple Müller glia-secreted ligands, including <em>VIM</em>, <em>SPP1</em>, and <em>COL9A2</em>, aberrantly converge on the <em>CD44</em> receptor of B cells[cite: 71, 73]. This interaction drives a highly active, self-sustaining reciprocal feedback loop with B-cell-derived <em>NPG1</em> targeting Müller glia <em>ERBB2</em> receptors, revealing a novel pathogenic mechanism that sustains chronic inflammation in the diabetic ocular microenvironment[cite: 76, 77, 78].
+                </p>
             <h3>3. Gene, Methylation, and Alternative Splicing Regulatory Network Modeling via Mendelian Randomization</h3>
             <p style="text-indent: 2em; text-align: justify;">Conducted extensive research training in statistical genetics by integrating GWAS data and multi-omics QTL datasets using Mendelian randomization approaches. Successfully constructed a highly resolved gene-splicing and methylation-gene regulatory network in ADHD patients, uncovering novel genetic and epigenetic pathogenic mechanisms.</p>
         </section>
