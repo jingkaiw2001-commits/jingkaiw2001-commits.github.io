@@ -21,11 +21,31 @@
         .publication-item { margin-bottom: 15px; padding-left: 15px; text-indent: -15px; }
         .interest-tags { margin-top: 10px; }
         .tag { display: inline-block; background-color: #e2e8f0; color: #4a5568; padding: 4px 10px; margin: 0 5px 8px 0; border-radius: 4px; font-size: 0.9em; }
+        
+        /* Profile Image Styling */
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            float: right;
+            margin-left: 25px;
+            margin-bottom: 15px;
+            border: 3px solid #e2e8f0;
+        }
+
+        /* Clearfix to keep header formatting intact with floating image */
+        header::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <img src="gemini_mypic.jpeg" alt="Jingkai WANG" class="profile-pic">
             <h1>Jingkai WANG</h1>
             <div class="contact-info">
                 Email: <a href="mailto:jingkaiw2001@gmail.com">jingkaiw2001@gmail.com</a> | 
@@ -78,19 +98,6 @@
         </section>
 
         <section>
-            <h2>Research Experience</h2>
-            
-            <h3>1. Multi-Omics Integration of the DLC1-FOXD3 Axis in Development</h3>
-            <p>Discovered the post-transcriptional regulatory mechanism of the DLC1-FOXD3 axis by integrating diverse multi-omics datasets, including mass spectrometry, RIP-seq, and RNA-seq. This investigation establishes how this specific regulatory interplay influences early neural crest development and maps potential mechanical links to the pathogenesis of Hirschsprung disease.</p>
-
-            <h3>2. Spatial Mapping Algorithms for Single-Cell Transcriptomics</h3>
-            <p>Developed an algorithm leveraging spatial transcriptomics data to restore spatial context to single-cell blood RNA-sequencing data. Applying this workflow led to the discovery of a distinct positive feedback loop between pericytes and B cells that actively promotes diabetic retinopathy progression.</p>
-
-            <h3>3. Regulatory Network Modeling via Mendelian Randomization</h3>
-            <p>Conducted extensive research training in statistical genetics by integrating GWAS data and multi-omics QTL datasets using Mendelian randomization approaches. Successfully constructed a highly resolved gene-splicing and methylation-gene regulatory network in ADHD patients, uncovering novel genetic and epigenetic pathogenic mechanisms.</p>
-        </section>
-
-        <section>
             <h2>Publications</h2>
             <div class="publication-item">
                 <strong>Wang J</strong>, Xu Z, Shek HT, Wong CL, Cheung M*. DLC1 stabilizes FOXD3 expression post-transcriptionally to regulate enteric neural crest development in Hirschsprung Disease, <em>Genome Medicine</em>. (Submitted)
@@ -104,6 +111,19 @@
             <div class="publication-item">
                 Wei Y, Yuan YX, <strong>Wang J</strong>, Zhu B, Wang KW, Zhou JY*. Association analysis of X-chromosome quantitative trait loci based on general pedigrees and independent individuals, in <em>China Biostatistics Annual Conference</em>. 2023: Taiyuan, Shanxi. p. 147.
             </div>
+        </section>
+
+        <section>
+            <h2>Research Experience</h2>
+            
+            <h3>1. Multi-Omics Integration of the DLC1-FOXD3 Axis in Development</h3>
+            <p>Discovered the post-transcriptional regulatory mechanism of the DLC1-FOXD3 axis by integrating diverse multi-omics datasets, including mass spectrometry, RIP-seq, and RNA-seq. This investigation establishes how this specific regulatory interplay influences early neural crest development and maps potential mechanical links to the pathogenesis of Hirschsprung disease.</p>
+
+            <h3>2. Spatial Mapping Algorithms for Single-Cell Transcriptomics</h3>
+            <p>Developed an algorithm leveraging spatial transcriptomics data to restore spatial context to single-cell blood RNA-sequencing data. Applying this workflow led to the discovery of a distinct positive feedback loop between pericytes and B cells that actively promotes diabetic retinopathy progression.</p>
+
+            <h3>3. Regulatory Network Modeling via Mendelian Randomization</h3>
+            <p>Conducted extensive research training in statistical genetics by integrating GWAS data and multi-omics QTL datasets using Mendelian randomization approaches. Successfully constructed a highly resolved gene-splicing and methylation-gene regulatory network in ADHD patients, uncovering novel genetic and epigenetic pathogenic mechanisms.</p>
         </section>
 
         <section>
