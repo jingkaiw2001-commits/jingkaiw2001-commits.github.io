@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jingkai WANG - Personal Website</title>
     <style>
-        /* 全局样式调整：为左侧侧边栏留出空间 */
+        /* 全局样式调整：左边距从 240px 加大到 290px，给变宽的侧边栏留出足够空间 */
         body { 
             font-family: sans-serif; 
-            margin: 40px 40px 40px 240px; /* 左边距加大到 240px，给目录留位置 */
+            margin: 40px 40px 40px 270px; 
             line-height: 1.6; 
             background-color: #f4f4f9; 
             color: #333; 
@@ -50,18 +50,18 @@
         }
 
         /* ========================================================
-           侧边悬浮目录栏样式 (Sidebar Navigation Styles)
+           优化后的侧边悬浮目录栏样式（加大、加粗、字变大）
            ======================================================== */
         .sidebar-nav {
             position: fixed;
             top: 60px;
             left: 30px;
-            width: 170px;
+            width: 200px;           /* 宽度从 170px 放大到 200px */
             background: white;
-            padding: 15px;
+            padding: 20px 15px;     /* 上下内边距加大，让条目之间更舒展 */
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-left: 3px solid #2E5A88;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 稍微加深阴影，更有质感 */
+            border-left: 4px solid #2E5A88;         /* 蓝色边框加粗到 4px */
         }
         .sidebar-nav ul {
             list-style: none;
@@ -69,27 +69,31 @@
             margin: 0;
         }
         .sidebar-nav li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;    /* 增加条目之间的上下垂直间距 */
         }
         .sidebar-nav a {
             color: #4a5568;
             text-decoration: none;
-            font-size: 0.95em;
+            font-size: 1.1em;       /* 字体大小从 0.95em 放大到 1.1em */
+            font-weight: 500;       /* 字重稍微加粗，更清晰易读 */
             display: block;
-            transition: color 0.2s ease;
+            padding: 4px 8px;       /* 给每个链接增加可点击区域和内边距 */
+            border-radius: 4px;
+            transition: all 0.2s ease;
         }
         .sidebar-nav a:hover {
             color: #2E5A88;
+            background-color: #f0f4f8; /* 鼠标悬停时增加一层极浅的蓝色背景，交互感更强 */
             font-weight: bold;
         }
 
-        /* 让页面滚动时更平滑，体验更好 */
+        /* 页面平滑滚动 */
         html {
             scroll-behavior: smooth;
         }
 
-        /* 响应式布局：当屏幕太小时（如手机），将目录变成顶部常规布局，防止遮挡内容 */
-        @media (max-width: 1050px) {
+        /* 响应式布局：在小屏幕下恢复原样 */
+        @media (max-width: 1120px) {
             body { margin: 20px; }
             .sidebar-nav { 
                 position: relative; 
@@ -98,10 +102,13 @@
                 width: auto; 
                 margin: 0 auto 20px auto; 
                 border-left: none;
-                border-bottom: 3px solid #2E5A88;
+                border-bottom: 4px solid #2E5A88;
+                box-shadow: none;
+                padding: 10px;
             }
-            .sidebar-nav ul { display: flex; flex-wrap: wrap; gap: 15px; }
+            .sidebar-nav ul { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
             .sidebar-nav li { margin-bottom: 0; }
+            .sidebar-nav a { font-size: 1em; padding: 4px 10px; }
         }
     </style>
 </head>
