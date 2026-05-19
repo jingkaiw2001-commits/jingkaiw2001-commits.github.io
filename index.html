@@ -7,74 +7,122 @@
     <style>
         body { font-family: sans-serif; margin: 40px; line-height: 1.6; background-color: #f4f4f9; color: #333; }
         .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        header { margin-bottom: 30px; }
         h1 { color: #0066cc; margin-bottom: 5px; }
         h2 { color: #0066cc; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px; margin-top: 30px; }
-        h3 { color: #4a5568; margin-top: 20px; }
+        h3 { color: #4a5568; margin-top: 20px; font-size: 1.15em; }
+        .contact-info { color: #4a5568; font-size: 0.95em; margin-bottom: 15px; }
+        .contact-info a { color: #0066cc; text-decoration: none; }
+        .contact-info a:hover { text-decoration: underline; }
         .date { float: right; color: #718096; font-style: italic; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        .publication-item { margin-bottom: 15px; }
+        .item-block { margin-bottom: 20px; }
+        ul { padding-left: 20px; margin-top: 5px; }
+        li { margin-bottom: 6px; }
+        .publication-item { margin-bottom: 15px; padding-left: 15px; text-indent: -15px; }
+        .interest-tags { margin-top: 10px; }
+        .tag { display: inline-block; background-color: #e2e8f0; color: #4a5568; padding: 4px 10px; margin: 0 5px 8px 0; border-radius: 4px; font-size: 0.9em; }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Profile Section -->
         <header>
             <h1>Jingkai WANG</h1>
-            <p><strong>Researcher & Developer</strong></p>
-            <p>Welcome to my personal space on the web. I am a researcher passionate about solving complex problems at the intersection of science and technology. Feel free to explore my background, research interests, and recent work below.</p>
+            <div class="contact-info">
+                Email: <a href="mailto:jingkaiw2001@gmail.com">jingkaiw2001@gmail.com</a> | 
+                Tel: +(852) 67608597 | 
+                GitHub: <a href="https://jingkaiw2001-commits.github.io/index.html" target="_blank">jingkaiw2001-commits.github.io</a>
+            </div>
+            <p>Welcome to my personal website. I am a computational biologist and researcher focused on unravelling complex molecular architectures through data integration and advanced statistical modeling.</p>
+            
+            <div class="interest-tags">
+                <span class="tag">Statistical genetics</span>
+                <span class="tag">Gene regulation</span>
+                <span class="tag">Post-transcriptional regulation</span>
+                <span class="tag">Computational biology</span>
+                <span class="tag">Bioinformatics</span>
+            </div>
         </header>
 
-        <!-- Education Section -->
         <section>
             <h2>Education</h2>
-            <div>
-                <span class="date">Expected 20XX / 20XX - 20XX</span>
-                <strong>Degree Name in Field of Study</strong><br>
-                <em>University Name</em>, Location
+            <div class="item-block">
+                <span class="date">Sep 2024 - Aug 2025</span>
+                <strong>Master of Medical Sciences (Distinction, Top 10)</strong><br>
+                <em>University of Hong Kong</em>
+            </div>
+            <div class="item-block">
+                <span class="date">Sep 2020 - Aug 2024</span>
+                <strong>BSc. in Biostatistics (GPA: 3.56/4, Top 10)</strong><br>
+                <em>Southern Medical University</em>
+            </div>
+        </section>
+
+        <section>
+            <h2>Employment & Academic Appointments</h2>
+            <div class="item-block">
+                <span class="date">Sep 2024 - Aug 2025</span>
+                <strong>Research Assistant</strong><br>
+                <em>Prof. Marin Cheung's Lab, University of Hong Kong</em>
                 <ul>
-                    <li>Relevant details, honors, or key focus areas.</li>
+                    <li>Integrated large-scale multi-omics datasets to discover critical regulatory boundaries controlling early development.</li>
+                </ul>
+            </div>
+            <div class="item-block">
+                <span class="date">Dec 2023 - Jul 2024</span>
+                <strong>Research Assistant</strong><br>
+                <em>Prof. Xiaoqiang Sun's Lab, Sun Yat-sen University</em>
+                <ul>
+                    <li>Developed computational pipelines to map single-cell resolution transcripts back onto structural tissue microenvironments.</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Employment Section -->
         <section>
-            <h2>Employment</h2>
-            <div>
-                <span class="date">20XX - Present</span>
-                <strong>Job Title / Role</strong><br>
-                <em>Company or Institution Name</em>, Location
-                <ul>
-                    <li>Key responsibility, achievement, or project managed in this role.</li>
-                    <li>Core technical tools or methodologies utilized.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Research Section with Three Subsections -->
-        <section>
-            <h2>Research</h2>
+            <h2>Research Experience</h2>
             
-            <h3>Research Area 1: Focus & Methodology</h3>
-            <p>Provide a detailed overview of your primary research vector. Describe the core biological, computational, or theoretical questions you are tackling and the specific methodologies you deploy to answer them.</p>
+            <h3>1. Multi-Omics Integration of the DLC1-FOXD3 Axis in Development</h3>
+            <p>Discovered the post-transcriptional regulatory mechanism of the DLC1-FOXD3 axis by integrating diverse multi-omics datasets, including mass spectrometry, RIP-seq, and RNA-seq. This investigation establishes how this specific regulatory interplay influences early neural crest development and maps potential mechanical links to the pathogenesis of Hirschsprung disease.</p>
 
-            <h3>Research Area 2: Data Integration & Frameworks</h3>
-            <p>Elaborate on how you manage data analytics, system-level modeling, or specialized computational pipelines. Highlight how integrating distinct data streams advances the scope of your discoveries.</p>
+            <h3>2. Spatial Mapping Algorithms for Single-Cell Transcriptomics</h3>
+            <p>Developed an algorithm leveraging spatial transcriptomics data to restore spatial context to single-cell blood RNA-sequencing data. Applying this workflow led to the discovery of a distinct positive feedback loop between pericytes and B cells that actively promotes diabetic retinopathy progression.</p>
 
-            <h3>Research Area 3: Future Directions & Applications</h3>
-            <p>Discuss the long-term vision of your research, its real-world implications, or how emerging tech architectures can be leveraged to translate experimental insights into practical applications.</p>
+            <h3>3. Regulatory Network Modeling via Mendelian Randomization</h3>
+            <p>Conducted extensive research training in statistical genetics by integrating GWAS data and multi-omics QTL datasets using Mendelian randomization approaches. Successfully constructed a highly resolved gene-splicing and methylation-gene regulatory network in ADHD patients, uncovering novel genetic and epigenetic pathogenic mechanisms.</p>
         </section>
 
-        <!-- Publication Section -->
         <section>
             <h2>Publications</h2>
             <div class="publication-item">
-                <strong>Wang, J.</strong>, Co-author, A., & Senior-Author, B. (2026). <em>Title of your pathbreaking research paper or manuscript currently under preparation.</em> Journal Name / Preprint Repository.
+                <strong>Wang J</strong>, Xu Z, Shek HT, Wong CL, Cheung M*. DLC1 stabilizes FOXD3 expression post-transcriptionally to regulate enteric neural crest development in Hirschsprung Disease, <em>Genome Medicine</em>. (Submitted)
             </div>
             <div class="publication-item">
-                Co-author, X., <strong>Wang, J.</strong>, & Senior-Author, Y. (2025). <em>Title of another impactful research contribution or conference proceeding.</em> Journal Name, Vol(Issue), Pages.
+                Zheng Z, Guo S, Tam HY, <strong>Wang J</strong>, Rao Y, Hui L, Cheung M, Leung A, Wong K, Sharma R, Liu JA, Cheung M*. Determination of trunk neural crest cell fate and susceptibility to splicing perturbation by the DLC1-SF3B1-PHF5A splicing complex, <em>Nature Communications</em>. DOI: 10.1038/s41467-025-62003-6
             </div>
+            <div class="publication-item">
+                <strong>Wang J</strong>, Zhu QW, Mai JH, Zhang S, Wang Y, Liang J, Zhou JY*. A multi-omics study of brain tissue transcription and DNA methylation revealing the genetic pathogenesis of ADHD, <em>Briefings in Bioinformatics</em>. DOI: 10.1093/bib/bbae502
+            </div>
+            <div class="publication-item">
+                Wei Y, Yuan YX, <strong>Wang J</strong>, Zhu B, Wang KW, Zhou JY*. Association analysis of X-chromosome quantitative trait loci based on general pedigrees and independent individuals, in <em>China Biostatistics Annual Conference</em>. 2023: Taiyuan, Shanxi. p. 147.
+            </div>
+        </section>
+
+        <section>
+            <h2>Scholarships & Awards</h2>
+            <ul>
+                <li><span class="date">Nov 2023</span>Annual Scholarship of Southern Medical University</li>
+                <li><span class="date">Nov 2023</span>Outstanding Student of Southern Medical University</li>
+                <li><span class="date">Jun 2023</span>Provincial First Prize, China National Statistical Modeling Contest</li>
+                <li><span class="date">Feb 2023</span>Meritorious Winner, International Mathematical Contest in Modeling (MCM/ICM)</li>
+                <li><span class="date">Apr 2022</span>First Prize, MathorCup Mathematical Modeling Contest</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Technical & Experimental Skills</h2>
+            <ul>
+                <li><strong>Computational & Statistical Skills:</strong> Linux, R, Python, MatLab, C++, SAS, Adobe Creative Suite.</li>
+                <li><strong>Wet Lab Experimental Skills:</strong> Cell culture, gene cloning, PCR (Polymerase Chain Reaction), Western blot.</li>
+            </ul>
         </section>
     </div>
 </body>
