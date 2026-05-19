@@ -161,7 +161,7 @@
         </section>
 
         <section id="appointments">
-            <h2>Employment & Academic Appointments</h2>
+            <h2>Academic Appointments</h2>
             <div class="item-block">
                 <span class="date">Sep 2024 - Present</span>
                 <strong>Research Assistant (Full-time)</strong><br>
@@ -224,12 +224,12 @@
             <p>
                 Traditional computational methods for inferring cell-cell communication (CCC) are constrained by a critical data modality mismatch. Current frameworks rely either entirely on single-cell RNA sequencing (scRNA-seq)—which captures detailed ligand-receptor (LR) signaling profiles in fluidic, unstructured samples like blood—or entirely on spatial transcriptomics (ST), which provides highly accurate localized predictions within fixed solid tissues. However, a major unmet research gap exists in modeling the dynamic endocrine cross-talk occurring at the interface of these two environments: specifically, how to analyze CCC between a solid tissue and the mobile blood cells flowing through its internal vasculature. This limitation is particularly evident in diseases like diabetic retinopathy, where crucial pathogenic immune signals are exchanged between the fixed retinal tissue and peripheral blood mononuclear cells (PBMCs) circulating through passing vessels. Prior to this work, no computational framework could effectively leverage both the spatial coordinates of ST tissue data and the fluidic cell profiles of blood scRNA-seq data simultaneously.
             </p>
-            <ul><li>Methodology & Logic: The Probabilistic "Pseudo Distance" Model</li></ul>
+            <strong>Methodology & Logic: The Probabilistic "Pseudo Distance" Model</strong>
             <p>
                 To bridge this gap, we developed a novel probabilistic model that introduces a spatial framework to circulating blood cells. Because flowing PBMCs lack precise coordinate data, the model operates on the logical assumption that a blood cell’s spatial probability distribution matches the density of local blood vessels within the tissue.
             </p>
 
-            <ol>
+            <ul>
                 <li>
                     <strong>Vascular Mapping:</strong> We first deconvolute the solid tissue's ST data to calculate the local proportion of endothelial cells at every spot, establishing a normalized vascular density function ($f_{endo}$).
                 </li>
@@ -239,7 +239,7 @@
                 <li>
                     <strong>Network & Regulatory Scoring:</strong> By integrating this pseudo distance into a modified <code>stMLnet</code> framework, we score LR signaling activities inversely to their proximity to the blood vessels. We then employ Random Forest Regression to quantify how strongly these spatial signaling activities regulate downstream target gene expression, filtering out low-importance pairs to isolate true endocrine interactions.
                 </li>
-            </ol>
+            </ul>
             <div style="text-align: center; margin: 25px 0;">
                 <img src="image/project2.jpg" style="max-width: 80%; height: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
             </div>
