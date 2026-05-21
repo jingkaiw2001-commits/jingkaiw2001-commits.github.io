@@ -250,12 +250,11 @@
 
             <article class="segment">
                 <p style="text-align: justify;">
-                      <strong>Background &amp; The Knowledge Gap</strong>
+                      <strong>Background &amp; The Knowledge Gap - cross-talk betweenn solid tissue and circulating blood cells</strong>
                 </p>
-                <ul>
-                    <li><strong>The Modality Mismatch:</strong> Traditional cell-cell communication (CCC) methods rely either entirely on single-cell RNA sequencing (scRNA-seq) or entirely on spatial transcriptomics (ST). Neither modality can independently model the dynamic endocrine cross-talk occurring at the physical interface between solid organs and mobile, circulating blood cells.</li>
-                    <li><strong>The Missing Framework:</strong> Prior to this work, no framework could map interactions between a fixed tissue structure and the fluidic profiles of peripheral blood mononuclear cells (PBMCs) flowing through internal vasculature. This limitation has historically masked critical pathogenic immune signals in diseases like diabetic retinopathy.</li>
-                </ul>
+                <p>
+                    Traditional cell-cell communication tools rely exclusively on either scRNA-seq of cell suspension or spatial transcriptomics (ST) of fixed tissue sections, leaving a critical gap in modeling cross-talk between solid tissues and circulating blood cells. My work introduced a framework to map interactions between a retina section and blood (PBMCs), uncovering pathogenic immune signals previously hidden in diseases like diabetic retinopathy.
+                </p>
             </article>
 
             <article class="segment">
@@ -263,7 +262,7 @@
                       <strong>Methodology &amp; Computational Logic</strong>
                 </p>
                 <ul>
-                    <li><strong>Vascular Density Mapping:</strong> The solid tissue's ST data is first deconvoluted to calculate the local proportion of endothelial cells at every spot, establishing a normalized vascular density function ($f_{endo}$) to establish spatial probability maps for flowing cells.</li>
+                    <li><strong>Vascular Density Mapping:</strong> The solid tissue's ST data is first deconvoluted to calculate the local proportion of endothelial cells at every spot, establishing a normalized vascular density function to establish spatial probability maps for flowing cells.</li>
                     <li><strong>The "Pseudo Distance" Model:</strong> Operating on the logical principle that a blood cell’s spatial probability matches local vascular density, we calculate an expected mathematical "pseudo distance" between each fixed tissue cell and circulating blood cells, weighting physical geometric distances by localized vascular probabilities.</li>
                     <li><strong>Network Scoring &amp; Filtering:</strong> Integrated these pseudo distances into a modified <code>stMLnet</code> framework to score ligand-receptor (LR) activities inversely to vascular proximity. Random Forest Regression was then deployed to quantify signaling regulatory strengths on downstream targets, filtering out low-importance pairs to isolate true endocrine interactions.</li>
                 </ul>
