@@ -86,7 +86,30 @@
             background-color: #f0f4f8; /* 鼠标悬停时增加一层极浅的蓝色背景，交互感更强 */
             font-weight: bold;
         }
+        .sidebar-nav .submenu {
+            padding-left: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .sidebar-nav .submenu li {
+            margin-bottom: 8px;
+        }
+        .sidebar-nav .submenu a {
+            font-size: 0.9em; /* Sightly smaller font for hierarchy */
+            font-weight: normal;
+            color: #718096;
+            padding: 2px 6px;
+        }
+        .sidebar-nav .submenu a:hover {
+            color: #2E5A88;
+            background-color: #f0f4f8;
+        }
 
+        /* Responsive adjustment for small screens */
+        @media (max-width: 1120px) {
+            .sidebar-nav .submenu { display: none; } /* Hides sub-menu on mobile to prevent clutter */
+        }
+        
         /* 页面平滑滚动 */
         html {
             scroll-behavior: smooth;
@@ -114,13 +137,20 @@
 </head>
 <body>
 
-    <nav class="sidebar-nav">
+<nav class="sidebar-nav">
         <ul>
             <li><a href="#about">About Me</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#appointments">Appointments</a></li>
             <li><a href="#publications">Publications</a></li>
-            <li><a href="#research">Research</a></li>
+            <li>
+                <a href="#research">Research</a>
+                <ul class="submenu">
+                    <li><a href="#project-dlc1">1. DLC1-FOXD3 Axis</a></li>
+                    <li><a href="#project-spatial">2. Spatial Mapping</a></li>
+                    <li><a href="#project-adhd">3. MR Multi-Omics</a></li>
+                </ul>
+            </li>
             <li><a href="#awards">Awards</a></li>
             <li><a href="#skills">Skills</a></li>
         </ul>
@@ -201,7 +231,7 @@
         
         <h2>Research Experience</h2>
             
-            <h3>1. Multi-Omics Integration revealing the DLC1-<em>FOXD3</em> Axis in Neural Crest Development</h3>
+            <h3 id="project-dlc1">1. Multi-Omics Integration revealing the DLC1-<em>FOXD3</em> Axis in Neural Crest Development</h3>
             <p style="text-indent: 2em; text-align: justify;">During my Master’s program and subsequent role as a research assistant, I worked on a project that uncovered a unique post-transcriptional regulatory mechanism between the protein DLC1 and <em>FOXD3</em> mRNA. An overview of this work is described below.</p>
 
             <article class="segment">
@@ -247,7 +277,7 @@
                 <img src="image/project1.jpg" alt="Multi-omics integration workflow for DLC1-FOXD3 axis" style="max-width: 90%; height: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
             </div>
             
-            <h3>2. Spatial Mapping Algorithms for Single-Cell Transcriptomics of the PBMCs</h3>
+            <h3 id="project-spatial">2. Spatial Mapping Algorithms for Single-Cell Transcriptomics of the PBMCs</h3>
             <p style="text-indent: 2em; text-align: justify;">During my research internship at Sun Yat-sen University, I addressed a fundamental limitation in cell-cell communication modeling by developing an innovative computational framework designed to interface solid tissue microenvironments with fluidic, circulating blood cell profiles.</p>
 
             <article class="segment">
@@ -284,7 +314,7 @@
                 <img src="image/project2.jpg" style="max-width: 80%; height: auto; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
             </div>
 
-            <h3>3. Gene, DNA Methylation, and Alternative Splicing Regulatory Network Construction via Multi-omics and Mendelian Randomization</h3>
+            <h3 id="project-adhd">3. Gene, DNA Methylation, and Alternative Splicing Regulatory Network Construction via Multi-omics and Mendelian Randomization</h3>
             <p style="text-indent: 2em; text-align: justify;">Driven by a longstanding interest in psychiatric genetics, I explored causal inference frameworks to advance target prediction boundaries for Attention-Deficit/Hyperactivity Disorder (ADHD), a highly heritable neurodevelopmental condition.</p>
 
             <article class="segment">
